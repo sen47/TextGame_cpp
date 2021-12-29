@@ -11,6 +11,7 @@ public:
 	bool iswin();
 	void addGold(const int value);
 	int tryToRun(const Monster& monster);
+	void printPlayerStats();
 private:
 	int m_level;
 	int m_baseLvlHealth;

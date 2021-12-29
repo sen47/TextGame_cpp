@@ -34,12 +34,20 @@ int Player::tryToRun(const Monster& monster)
 	if (!isRun)
 	{
 		m_health -= monster.getDamage();
-		std::cout << "\nFail! You don\'t run, " << monster.getName() << " hit you, and take " << monster.getDamage() << " health points."
+		printPlayerStats();
+		std::cout << "\n\nFail! You don\'t run, " << monster.getName() << " hit you, and take " << monster.getDamage() << " health points."
 			<< "\nNow you have " << m_health << " health points.";
 	}
 	else
 	{
-		std::cout << "\nRun forest, run! You is lucky, you can run of monster";
+		printPlayerStats();
+		std::cout << "\n\nRun forest, run! You is lucky, you can run of monster";
 	}
 	return static_cast<bool>(isRun);
+}
+
+void Player::printPlayerStats()
+{
+	std::cout << "Hero: " << m_name << ", lvl: " << m_level << ", hp: " << m_health 
+		<< ", damage: " << m_damage << ", gold: " << m_gold;
 }

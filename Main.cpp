@@ -17,14 +17,16 @@ int main()
 
 	Player player;
 	std::cout << "Hello, " << player.getName() << ", are you ready?";
-	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+	//std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 	std::cout << "\nIn general, to be honest, i don\'t care, we start!";
-	std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-	
+	//std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+	system("cls");
+
 	const char RUN = 'r', FIGHT = 'f';
 	
 	do
 	{
+		player.printPlayerStats();
 		Monster monster = Monster::getRandomMonster();
 		monster.printMonsterInfo();
 		
@@ -32,6 +34,7 @@ int main()
 		do
 		{
 			char answer = getAnswer();
+			system("cls");
 			switch (answer)
 			{
 			case RUN:
@@ -41,7 +44,7 @@ int main()
 
 				break;
 			}
-		} while (!isRun || !monster.isDead());
+		} while (!isRun && !monster.isDead());
 
 	} while (!player.iswin() || !player.isDead());
 
