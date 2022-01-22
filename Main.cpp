@@ -1,7 +1,5 @@
 #include<cstdlib>
 #include<ctime>
-#include<thread>
-#include<chrono>
 
 #include"Player.h"
 #include"Monster.h"
@@ -35,16 +33,20 @@ int main()
 		{
 			char answer = getAnswer();
 			system("cls");
+			
 			switch (answer)
 			{
 			case RUN:
-				isRun=player.tryToRun(monster);
+				isRun = player.tryToRun(monster);
 				break;
 			case FIGHT:
-
+				player.attack(monster);
+				monster.attack(player);
+				player.printPlayerStats();
+				monster.printMonsterInfo();
 				break;
 			}
-		} while (!isRun && !monster.isDead());
+		} while (!isRun && !monster.isDead()|| !player.isDead());
 
 	} while (!player.iswin() || !player.isDead());
 

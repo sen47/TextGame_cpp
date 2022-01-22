@@ -1,3 +1,3 @@
-﻿  Player.cpp
-C:\Projects VS\TextGame_cpp\Creature.h(16,36): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
-  TextGame_cpp.vcxproj -> C:\Projects VS\TextGame_cpp\Debug\TextGame_cpp.exe
+﻿  Main.cpp
+C:\Project_VS\TextGame_cpp\Creature.h(16,36): warning C4227: устаревший элемент: пропуск квалификаторов для ссылки
+  TextGame_cpp.vcxproj -> C:\Project_VS\TextGame_cpp\Debug\TextGame_cpp.exe

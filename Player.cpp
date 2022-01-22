@@ -35,13 +35,15 @@ int Player::tryToRun(const Monster& monster)
 	{
 		m_health -= monster.getDamage();
 		printPlayerStats();
-		std::cout << "\n\nFail! You don\'t run, " << monster.getName() << " hit you, and take " << monster.getDamage() << " health points."
+		std::cout << "\n\nFail! You can\'t run, " << monster.getName() << " hit you, and take " << monster.getDamage() << " health points."
 			<< "\nNow you have " << m_health << " health points.";
 	}
 	else
 	{
 		printPlayerStats();
 		std::cout << "\n\nRun forest, run! You is lucky, you can run of monster";
+		std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+		system("cls");
 	}
 	return static_cast<bool>(isRun);
 }
@@ -51,3 +53,4 @@ void Player::printPlayerStats()
 	std::cout << "Hero: " << m_name << ", lvl: " << m_level << ", hp: " << m_health 
 		<< ", damage: " << m_damage << ", gold: " << m_gold;
 }
+

@@ -1,5 +1,10 @@
 #pragma once
+
+#include<thread>
+#include<chrono>
+
 #include"Creature.h"
+
 
 class Monster;
 
